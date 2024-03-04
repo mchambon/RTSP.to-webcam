@@ -30,12 +30,20 @@ sudo nano /etc/motion/motion.conf
 Add the following lines to the configuration file, replacing `username` and `password` with the credentials you want to use to access the stream:
 
 ```
+log_file /tmp/motion/motion.log
+
 stream_port 8081
 stream_localhost off
 stream_authentication username:password
 ```
 
-Save the file and exit the editor.
+
+```
+sudo mkdir /tmp/motion
+sudo chown motion:motion /tmp/motion
+sudo touch /tmp/motion/motion.log
+sudo chown motion:motion /tmp/motion/motion.log
+```
 
 ## Start Motion
 
